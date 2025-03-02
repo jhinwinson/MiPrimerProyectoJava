@@ -16,5 +16,6 @@ public class EjercicioPractico {
         System.out.println("La multiplicación es de : " + multiplicacion);
         System.out.println("La división es de : " + division);
         System.out.println("el residuo de la divicion es de : " + residuo);
+        leer.close();
     }
 }
