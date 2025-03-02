@@ -11,7 +11,6 @@ public class EjercicioPractico {
         int multiplicacion = numero1 * numero2;
         int division = numero1 / numero2;
         int residuo = numero1 % numero2;
-
         System.out.println("La suma es de : " + suma);
         System.out.println("La resta es de : " + resta);
         System.out.println("La multiplicación es de : " + multiplicacion);
