@@ -1,4 +1,4 @@
-package MisPracticas;
+
 import java.util.Scanner;
 public class Array {
 
