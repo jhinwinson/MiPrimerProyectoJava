@@ -17,20 +17,35 @@ public class GrupoB {
                 System.out.println("------------------------------------------");
             }
         }
-        
-
         String nombres[]= new String[cantidad];
         int codigos[] = new int [cantidad];
         double notas[][] = new double[cantidad][3];     //3 es el numero de asignaturas          
         double[]promedios = new double[cantidad];
 
         for(byte i=0;i<cantidad;i++){
-            System.out.print("Ingrese el nombre del estudiante : ");
-            nombres[i]= leer.nextLine();
+
+            System.out.print("Ingrese el nombre del estudiante: ");
+            nombres[i] = leer.nextLine();
+            while (nombres[i].length() < 3) { //.length imprime cuantos caracteres tiene una cadena
+                System.out.println("-----------------------------------------------");
+                System.out.println("    El nombre debe tener al menos 3 letras.    ");
+                System.out.println("               Intente nuevamente              ");
+                System.out.println("-----------------------------------------------");
+                System.out.print  ("Ingrese el nombre del estudiante : ");
+                nombres[i] = leer.nextLine();
+            }
 
             System.out.print("Ingrese el codigo del estudiante : ");
             codigos[i] = leer.nextInt();
-            
+           while (codigos[i]<100000 || codigos[i]>999999) {
+                System.out.println("-----------------------------------------------");
+                System.out.println("        El codigo debe tener 6 digitos         ");
+                System.out.println("               Intente nuevamente              ");
+                System.out.println("-----------------------------------------------");
+                System.out.print  ("Ingrese el codigo del estudiante: ");
+                codigos[i] = leer.nextInt();
+           }
+
             System.out.print("Ingrese la nota de Matemáticas: ");
             notas[i][0] = leer.nextDouble();
 
