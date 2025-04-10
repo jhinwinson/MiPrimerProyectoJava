@@ -3,10 +3,21 @@ public class GrupoB {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         final int aprobacion = 3;
-
-        System.out.print("Ingrese la cantidad de estudiantes :");
-        int cantidad = leer.nextInt(); //columnas
-        leer.nextLine(); 
+        
+        //comprobacion de que si se ingresen estudiantes
+        int cantidad = 0;
+        while (cantidad <= 0) {
+            System.out.print("Ingrese la cantidad de estudiantes: ");
+            cantidad = leer.nextInt();
+            leer.nextLine(); // Limpiar el buffer
+            if (cantidad <= 0) {
+                System.out.println("------------------------------------------");
+                System.out.println("    La cantidad debe ser mayor que (0)    ");
+                System.out.println("           Intente nuevamente:            ");
+                System.out.println("------------------------------------------");
+            }
+        }
+        
 
         String nombres[]= new String[cantidad];
         int codigos[] = new int [cantidad];
