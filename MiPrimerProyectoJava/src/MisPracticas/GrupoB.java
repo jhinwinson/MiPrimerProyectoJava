@@ -35,7 +35,7 @@ public class GrupoB {
                 nombres[i] = leer.nextLine();
             }
 
-            System.out.print("Ingrese el codigo del estudiante : ");
+            System.out.print("Ingrese el codigo del estudiante, 6 digitos : ");
             codigos[i] = leer.nextInt();
            while (codigos[i]<100000 || codigos[i]>999999) {
                 System.out.println("-----------------------------------------------");
@@ -46,34 +46,58 @@ public class GrupoB {
                 codigos[i] = leer.nextInt();
            }
 
-            System.out.print("Ingrese la nota de Matemáticas: ");
-            notas[i][0] = leer.nextDouble();
-
-            System.out.print("Ingrese la nota de Química: ");
-            notas[i][1] = leer.nextDouble();
-
-            System.out.print("Ingrese la nota de Física: ");
-            notas[i][2] = leer.nextDouble();
+           System.out.print("Ingrese la nota de Matemáticas: ");
+           notas[i][0] = leer.nextDouble();
+           while (notas[i][0] < 0.0 || notas[i][0] > 5.0) {
+               System.out.println("------------------------------------------------");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("              Intente nuevamente                ");
+               System.out.println("------------------------------------------------");
+               System.out.print("Ingrese la nota de Matemáticas: ");
+               notas[i][0] = leer.nextDouble();
+           }
+           
+           System.out.print("Ingrese la nota de Química: ");
+           notas[i][1] = leer.nextDouble();
+           while (notas[i][1] < 0.0 || notas[i][1] > 5.0) {
+               System.out.println("------------------------------------------------");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("              Intente nuevamente                ");
+               System.out.println("------------------------------------------------");
+               System.out.print("Ingrese la nota de Química: ");
+               notas[i][1] = leer.nextDouble();
+           }
+           
+           System.out.print("Ingrese la nota de Física: ");
+           notas[i][2] = leer.nextDouble();
+           while (notas[i][2] < 0.0 || notas[i][2] > 5.0) {
+               System.out.println("------------------------------------------------");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("              Intente nuevamente                ");
+               System.out.println("------------------------------------------------");
+               System.out.print("Ingrese la nota de Física: ");
+               notas[i][2] = leer.nextDouble();
+           }
 
             promedios[i] = (notas[i][0] + notas[i][1] + notas[i][2])/3; //guarda el promedio en el primer recorrido
 
             leer.nextLine(); 
             }
 
-            System.out.println("----- REPORTE FINAL DEL CURSO -----");
+            System.out.println("--------- REPORTE FINAL DEL CURSO ---------");
 
             for (int i = 0; i < cantidad; i++) {
                 
-                System.out.println("Estudiante: " + nombres[i] + " (con el codigo: " + codigos[i] + ")");
+                System.out.println("El estudiante: " + nombres[i] + " con el codigo: " + codigos[i] );
 
                 System.out.println("Tiene un promedio de " + promedios[i]);
 
                 if (promedios[i] >= aprobacion ){
-                    System.out.println("APROBADO");
+                    System.out.println("Se encuentra (Aprobado)");
                 } else {
-                    System.out.println("REPROBADO");
+                    System.out.println("Se encuentra (Reprobado)");
                 }
-      
+            System.out.println("--------------------------------------------");
             }
         }
 
