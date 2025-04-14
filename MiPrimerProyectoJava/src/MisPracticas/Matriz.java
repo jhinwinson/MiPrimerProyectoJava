@@ -21,6 +21,6 @@ public class Matriz {
         //motrar valor de la posicion que se quiera
         System.out.println("el valor en la posicion 0 1 es "+ matriz2[0][1]);
 
-
+     leer.close();
     }
 }

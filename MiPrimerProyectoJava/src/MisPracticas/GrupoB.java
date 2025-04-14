@@ -99,6 +99,7 @@ public class GrupoB {
                 }
             System.out.println("--------------------------------------------");
             }
+            leer.close();
         }
 
     }
