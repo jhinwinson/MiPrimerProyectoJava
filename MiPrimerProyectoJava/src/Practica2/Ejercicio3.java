@@ -30,5 +30,6 @@ public class Ejercicio3 {
         System.out.println("la media es de "+media/cantidadNotas);
         System.out.println("La nota mayor es : "+mayor);
         System.out.println("La nota menor es : "+menor);
+        leer.close();
     }
 }

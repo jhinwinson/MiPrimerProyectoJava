@@ -23,5 +23,6 @@ public class Ejercicio2 {
             System.out.println(nombresInversos[i]);
             
         }
+        leer.close();
     }
 }
