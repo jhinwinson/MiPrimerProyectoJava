@@ -3,8 +3,7 @@ public class GrupoB {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         final int aprobacion = 3;
-        
-        //comprobacion de que si se ingresen estudiantes
+
         int cantidad = 0;
         while (cantidad <= 0) {
             System.out.print("Ingrese la cantidad de estudiantes: ");
@@ -34,7 +33,7 @@ public class GrupoB {
                 System.out.print  ("Ingrese el nombre del estudiante : ");
                 nombres[i] = leer.nextLine();
             }
-
+            
             System.out.print("Ingrese el codigo del estudiante, 6 digitos : ");
             codigos[i] = leer.nextInt();
            while (codigos[i]<100000 || codigos[i]>999999) {
@@ -45,9 +44,37 @@ public class GrupoB {
                 System.out.print  ("Ingrese el codigo del estudiante: ");
                 codigos[i] = leer.nextInt();
            }
+            boolean codigoRepetido;
+            do {
+                codigoRepetido = false;
+                for (int j = 0; j < i; j++) {
+                    if (codigos[j] == codigos[i]) {
+                        codigoRepetido = true;
+                        System.out.println("------------------------------------------------");
+                        System.out.println("   El código ya ha sido ingresado anteriormente  ");
+                        System.out.println("              Intente con otro código            ");
+                        System.out.println("------------------------------------------------");
+                        System.out.print("Ingrese el código del estudiante, 6 dígitos: ");
+                        codigos[i] = leer.nextInt();
 
-           System.out.print("Ingrese la nota de Matemáticas: ");
-           notas[i][0] = leer.nextDouble();
+                        // Validar de nuevo que tenga 6 dígitos
+                        while (codigos[i] < 100000 || codigos[i] > 999999) {
+                            System.out.println("------------------------------------------------");
+                            System.out.println("        El código debe tener 6 dígitos           ");
+                            System.out.println("              Intente nuevamente                ");
+                            System.out.println("------------------------------------------------");
+                            System.out.print("Ingrese el código del estudiante: ");
+                            codigos[i] = leer.nextInt();
+                        }
+
+                        break; // sal del for y vuelve a verificar unicidad
+                    }
+                }
+            } while (codigoRepetido);
+                    
+
+                    System.out.print("Ingrese la nota de Matemáticas: ");
+                    notas[i][0] = leer.nextDouble();
            while (notas[i][0] < 0.0 || notas[i][0] > 5.0) {
                System.out.println("------------------------------------------------");
                System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
