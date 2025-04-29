@@ -1,5 +1,4 @@
-package PracticasArrays;
-
+package Practica2;
 import java.util.Scanner;
 
 public class Ejercicio7 {
