@@ -59,33 +59,33 @@ public class GrupoB {
                         System.out.println("              Intente con otro codigo            ");
                         System.out.println("-------------------------------------------------");
                         System.out.print("Ingrese el codigo del estudiante, 6 digitos: ");
-                        codigos[i] = leer.nextInt(); // Pedimos un nuevo codigo
+                        codigos[i] = leer.nextInt(); // Pedimos un nuevo codigo.
 
-                        // Volvemos a validar que tenga 6 digitos
+                        // Volvemos a validar que tenga 6 digitos.
                         while (codigos[i] < 100000 || codigos[i] > 999999) {
                             System.out.println("------------------------------------------------");
                             System.out.println("        El codigo debe tener 6 digitos          ");
                             System.out.println("              Intente nuevamente                ");
                             System.out.println("------------------------------------------------");
                             System.out.print("Ingrese el codigo del estudiante: ");
-                            codigos[i] = leer.nextInt();// volvemos a guardar el codigo
+                            codigos[i] = leer.nextInt();// volvemos a guardar el codigo.
                         }
 
-                        break; // con este braak se avisamos que se encontro el codigo igual y se cambio por otro y salimos del for para volver a revisar nuevamente
+                        break; // con este braak se avisamos que se encontro el codigo igual y se cambio por otro y salimos del for para volver a revisar nuevamente.
                     }
                 }
-            } while (codigoRepetido); //continuamos dentro del bucle mientras sea tru
+            } while (codigoRepetido); //continuamos dentro del bucle mientras sea tru.
 
-            // Pedimos y validamos la nota de Matematicas en que este en el rango de 0.0 a 5.0
-            System.out.print("Ingrese la nota de Matematicas: ");
-            notas[i][0] = leer.nextDouble();
-            while (notas[i][0] < 0.0 || notas[i][0] > 5.0) {
+            // Pedimos y validamos la nota de Matematicas en que este en el rango de 0.0 a 5.0.
+            System.out.print("Ingrese la nota de Matematicas: "); // le pedimos al usuario ingresar la nota.
+            notas[i][0] = leer.nextDouble(); // Guardamos dentro de la matriz la nota de matematicas en la columna 0.
+            while (notas[i][0] < 0.0 || notas[i][0] > 5.0) { // Validamos que la nota este en el rango de 0.0 a 5.0.
                System.out.println("------------------------------------------------");
                System.out.println("   La nota debe estar entre 0.0 y 5.0           ");
                System.out.println("              Intente nuevamente                ");
                System.out.println("------------------------------------------------");
-               System.out.print("Ingrese la nota de Matematicas: ");
-               notas[i][0] = leer.nextDouble();
+               System.out.print("Ingrese la nota de Matematicas: "); // volvemos a pedir la nota.
+               notas[i][0] = leer.nextDouble(); // guardamos y validamos nuevamente la nota.
            }
 
            // Pedimos y validamos la nota de Quimica
@@ -112,18 +112,18 @@ public class GrupoB {
                notas[i][2] = leer.nextDouble();
            }
 
-            // Calculamos el promedio de las 3 materias
-            promedios[i] = (notas[i][0] + notas[i][1] + notas[i][2])/3;
+            // Calculamos el promedio de las 3 materias usando un array para guardar los promedios.
+            promedios[i] = (notas[i][0] + notas[i][1] + notas[i][2])/3; //nos ubicamos en las 3 columnas para dividir las tres notas entre 3 y obtener el promedio.
 
-            leer.nextLine(); // Limpiamos el buffer otra vez
+            leer.nextLine(); // Limpiamos el buffer otra vez para consumir el enter y evitar errores en la siguiente iteracion.
         }
 
-        System.out.println("--------- REPORTE FINAL DEL CURSO ---------");
+        System.out.println("--------- REPORTE FINAL DEL CURSO ---------"); // mostramos el reporte final.
 
-        for (int i = 0; i < cantidad; i++) { // Recorremos para mostrar los datos
-            System.out.println("El estudiante: " + nombres[i] + " con el codigo: " + codigos[i] );
-            System.out.println("Tiene un promedio de " + promedios[i]);
-            if (promedios[i] >= aprobacion ){ // Verificamos si paso o no
+        for (int i = 0; i < cantidad; i++) { // Lo usamos para obtener la ubicacion de cada datodentro de los arrays.
+            System.out.println("El estudiante: " + nombres[i] + " con el codigo: " + codigos[i] ); // mostramos los datos del estudiante.
+            System.out.println("Tiene un promedio de " + promedios[i]);// Mostramos el promedio.
+            if (promedios[i] >= aprobacion ){ // Verificamos si paso o no validando si es mayor o igual a 3.0(la constante de aprobacion).
                 System.out.println("Se encuentra (Aprobado)");
             } else {
                 System.out.println("Se encuentra (Reprobado)");
@@ -131,6 +131,6 @@ public class GrupoB {
             System.out.println("--------------------------------------------");
         }
 
-        leer.close(); // Cerramos el lector para liberar recursos
+        leer.close(); // Cerramos el leer para no consumir mas recursos.
     }
 }
