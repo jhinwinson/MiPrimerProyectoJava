@@ -136,6 +136,6 @@ public class GrupoB { // Declara la clase principal del programa.
             System.out.println("--------------------------------------------");
         }
 
-        leer.close(); // Cierra el objeto Scanner para liberar recursos.
+        leer.close(); // Cierra el objeto Scanner para liberar recursos. 
     }
 }
