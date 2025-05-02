@@ -85,7 +85,7 @@ public class GrupoB {
             notas[i][0] = leer.nextDouble();
             while (notas[i][0] < 0.0 || notas[i][0] > 5.0) {
                System.out.println("------------------------------------------------");
-               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0           ");
                System.out.println("              Intente nuevamente                ");
                System.out.println("------------------------------------------------");
                System.out.print("Ingrese la nota de Matemáticas: ");
@@ -97,7 +97,7 @@ public class GrupoB {
            notas[i][1] = leer.nextDouble();
            while (notas[i][1] < 0.0 || notas[i][1] > 5.0) {
                System.out.println("------------------------------------------------");
-               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0           ");
                System.out.println("              Intente nuevamente                ");
                System.out.println("------------------------------------------------");
                System.out.print("Ingrese la nota de Química: ");
@@ -109,7 +109,7 @@ public class GrupoB {
            notas[i][2] = leer.nextDouble();
            while (notas[i][2] < 0.0 || notas[i][2] > 5.0) {
                System.out.println("------------------------------------------------");
-               System.out.println("   La nota debe estar entre 0.0 y 5.0 inclusive  ");
+               System.out.println("   La nota debe estar entre 0.0 y 5.0           ");
                System.out.println("              Intente nuevamente                ");
                System.out.println("------------------------------------------------");
                System.out.print("Ingrese la nota de Física: ");
