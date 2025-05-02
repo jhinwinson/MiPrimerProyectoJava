@@ -28,7 +28,10 @@ public class GrupoB {
             System.out.print("Ingrese el nombre del estudiante: ");
             nombres[i] = leer.nextLine(); // Leemos el nombre.
          
-            while (nombres[i].length() < 3 || !nombres[i].matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+")) { // verifico que contenga mayusculas, minusculas y espacios.
+            while (nombres[i].length() < 3 || !nombres[i].matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+")) { 
+                /* verifico que contenga mayusculas, minusculas y espacios.
+                 usamos el ! ya que en el momento donde se ingrese un numero va a dar falso 
+                 y debemos pasarlo a verdadero para entrar al while*/
                 System.out.println("-------------------------------------------------");
                 System.out.println(" El nombre debe tener al menos 3 letras y solo   ");
                 System.out.println("  puede contener letras (sin números ni simbolos)");
