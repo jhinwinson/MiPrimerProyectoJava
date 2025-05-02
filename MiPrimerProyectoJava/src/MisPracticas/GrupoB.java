@@ -27,14 +27,17 @@ public class GrupoB {
             // con el siguiente bloque de codigo se estara validando que se obtengan al menos 3 digitos en el nombre.
             System.out.print("Ingrese el nombre del estudiante: ");
             nombres[i] = leer.nextLine(); // Leemos el nombre.
-            while (nombres[i].length() < 3) { // Validamos que tenga al menos 3 letras usando el .lengt el cual nos da la cantidad de digitos que tenga el string.
-                System.out.println("-----------------------------------------------");
-                System.out.println("    El nombre debe tener al menos 3 letras.    ");
-                System.out.println("               Intente nuevamente              ");
-                System.out.println("-----------------------------------------------");
-                System.out.print  ("Ingrese el nombre del estudiante : ");
-                nombres[i] = leer.nextLine(); // Volvemos a pedir el nombre
+         
+            while (nombres[i].length() < 3 || !nombres[i].matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+")) { // verifico que contenga mayusculas, minusculas y espacios.
+                System.out.println("-------------------------------------------------");
+                System.out.println(" El nombre debe tener al menos 3 letras y solo   ");
+                System.out.println("  puede contener letras (sin números ni simbolos)");
+                System.out.println("               Intente nuevamente                ");
+                System.out.println("-------------------------------------------------");
+                System.out.print("Ingrese el nombre del estudiante: ");// Volvemos a pedir el nombre
+                nombres[i] = leer.nextLine(); //Guardamos i validados nuevamente el nombre.
             }
+
 
             // con el siguiente bloque de codigo se estara validando que el codigo del estudiante estrictamente sea de 6 caracteres
             System.out.print("Ingrese el codigo del estudiante, 6 digitos : ");
