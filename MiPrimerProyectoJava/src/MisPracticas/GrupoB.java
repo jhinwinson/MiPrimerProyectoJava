@@ -1,22 +1,21 @@
 import java.util.Scanner; // Importamos Scanner para poder leer datos que le ingresemos por teclado.
-public class GrupoB { 
-    public static void main(String[] args) {
+public class GrupoB { // Declara la clase principal del programa.
+    public static void main(String[] args) {// Método principal, donde inicia la ejecución del programa.
         Scanner leer = new Scanner(System.in); // le dimos el nombre de leer a la variable scaneer porque nos recuerda a pseint.
         final int aprobacion = 3; // Definimos la nota minima para aprobar como una constante.
 
         int cantidad = 0; // Creamos la variable que guardara cuantos estudiantes hay, y nos ayudara a entrar al while.
-        while (cantidad <= 0) { // Mientras la cantidad sea cero o negativa, pedimos un numero valido.
-            System.out.print("Ingrese la cantidad de estudiantes: ");
-            cantidad = leer.nextInt(); // Leemos la cantidad ingresada.
-            leer.nextLine(); // Limpiamos el buffer para evitar errores con nextLine() mas adelante.
-            if (cantidad <= 0) { // Si aun es invalida, mostramos un mensaje de advertencia.
+        while (cantidad <= 0) { // Repite este bloque mientras la cantidad sea cero o negativa, pedimos un numero valido.
+            System.out.print("Ingrese la cantidad de estudiantes: ");// Pide al usuario que ingrese la cantidad de estudiantes
+            cantidad = leer.nextInt(); // se captura y Lee el número ingresado por el usuario
+            leer.nextLine(); // limpia el "enter"pendiente,limpiamos el buffer para evitar errores con nextLine() mas adelante.
+            if (cantidad <= 0) { //  Si aun es invalida, mostramos un mensaje de advertencia.
                 System.out.println("------------------------------------------");
                 System.out.println("    La cantidad debe ser mayor que (0)    ");
                 System.out.println("           Intente nuevamente:            ");
                 System.out.println("------------------------------------------");
             }
         }
-
         String nombres[]= new String[cantidad]; // Creamos un Array(arreglo) para guardar los nombres.
         int codigos[] = new int [cantidad]; // Creamos un arreglo para guardar los codigos.
         double notas[][] = new double[cantidad][3]; // Creamos una matriz para guardar las notas de las 3 matrias.
@@ -126,17 +125,17 @@ public class GrupoB {
 
         System.out.println("--------- REPORTE FINAL DEL CURSO ---------"); // mostramos el reporte final.
 
-        for (int i = 0; i < cantidad; i++) { // Lo usamos para obtener la ubicacion de cada datodentro de los arrays.
-            System.out.println("El estudiante: " + nombres[i] + " con el codigo: " + codigos[i] ); // mostramos los datos del estudiante.
+        for (int i = 0; i < cantidad; i++) { //  Recorre uno por uno todos los estudiantes, lo usamos para obtener la ubicacion de cada datodentro de los arrays.
+            System.out.println("El estudiante: " + nombres[i] + " con el codigo: " + codigos[i] ); // // Muestra el nombre y código del estudiante
             System.out.println("Tiene un promedio de " + promedios[i]);// Mostramos el promedio.
             if (promedios[i] >= aprobacion ){ // Verificamos si paso o no validando si es mayor o igual a 3.0(la constante de aprobacion).
-                System.out.println("Se encuentra (Aprobado)");
+                System.out.println("Se encuentra (Aprobado)");// Se indica que aprobó
             } else {
-                System.out.println("Se encuentra (Reprobado)");
+                System.out.println("Se encuentra (Reprobado)");// Si no, se indica que reprobó
             }
             System.out.println("--------------------------------------------");
         }
 
-        leer.close(); // Cerramos el leer para no consumir mas recursos.
+        leer.close(); // Cierra el objeto Scanner para liberar recursos.
     }
 }
