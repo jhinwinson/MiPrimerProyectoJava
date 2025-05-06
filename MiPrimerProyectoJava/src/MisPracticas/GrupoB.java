@@ -5,15 +5,23 @@ public class GrupoB { // Declara la clase principal del programa.
         final int aprobacion = 3; // Definimos la nota minima para aprobar como una constante.
 
         int cantidad = 0; // Creamos la variable que guardara cuantos estudiantes hay, y nos ayudara a entrar al while.
+        
         while (cantidad <= 0) { // Repite este bloque mientras la cantidad sea cero o negativa, pedimos un numero valido.
             System.out.print("Ingrese la cantidad de estudiantes: ");// Pide al usuario que ingrese la cantidad de estudiantes
-            cantidad = leer.nextInt(); // se captura y Lee el número ingresado por el usuario
-            leer.nextLine(); // limpia el "enter"pendiente,limpiamos el buffer para evitar errores con nextLine() mas adelante.
-            if (cantidad <= 0) { //  Si aun es invalida, mostramos un mensaje de advertencia.
+            if (leer.hasNextInt()) { //el has.NextInt solo funciona en el scanner, sirve para validar que solo sea numeros enteros
+                cantidad = leer.nextInt(); // se captura y Lee el número ingresado por el usuario
+                leer.nextLine(); // limpia el "enter"pendiente,limpiamos el buffer para evitar errores con nextLine() mas adelante.
+                if (cantidad <= 0) { //  Si aun es invalida, mostramos un mensaje de advertencia.
+                    System.out.println("------------------------------------------");
+                    System.out.println("    La cantidad debe ser mayor que (0)    ");
+                    System.out.println("           Intente nuevamente:            ");
+                    System.out.println("------------------------------------------");
+            }
+            } else {
                 System.out.println("------------------------------------------");
-                System.out.println("    La cantidad debe ser mayor que (0)    ");
-                System.out.println("           Intente nuevamente:            ");
+                System.out.println("    El dato no es valido,intenta de nuevo ");
                 System.out.println("------------------------------------------");
+                leer.nextLine(); // Limpia lo ingresado para permitir un nuevo intento
             }
         }
         String nombres[]= new String[cantidad]; // Creamos un Array(arreglo) para guardar los nombres.
